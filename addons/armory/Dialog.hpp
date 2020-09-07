@@ -1,10 +1,10 @@
 // Size definitions
 #define SIZEX ((safezoneW / safezoneH) min 1.2) // Grid width (from aspect ratio, 1.2 clamp for the largest possible size)
 #define SIZEY (SIZEX / 1.2) // Grid height (from width)
-#define W_PART(num) (num * (SIZEX / 40)) // Split grid into 40 columns
-#define H_PART(num) (num * (SIZEY / 25)) // Split grid into 25 rows
-#define X_PART(num) (W_PART(num) + (safezoneX + (safezoneW - SIZEX)/2)) // Translate by columns and find left of grid
-#define Y_PART(num) (H_PART(num) + (safezoneY + (safezoneH - SIZEY)/2)) // Translate by rows and find top of grid
+#define W_PART(num) QUOTE((num * (SIZEX / 40))) // Split grid into 40 columns
+#define H_PART(num) QUOTE((num * (SIZEY / 25))) // Split grid into 25 rows
+#define X_PART(num) QUOTE((W_PART(num) + (safezoneX + (safezoneW - SIZEX) / 2))) // Translate by columns and find left of grid
+#define Y_PART(num) QUOTE((H_PART(num) + (safezoneY + (safezoneH - SIZEY) / 2))) // Translate by rows and find top of grid
 
 #define PIC_X X_PART(11.15)
 #define PIC_Y Y_PART(2.8)
@@ -92,7 +92,7 @@ class GVAR(RscCombo) {
     type = CT_COMBO;
     style = ST_LEFT + LB_TEXTURES;
     font = "RobotoCondensed";
-    sizeEx = "0.04";
+    sizeEx = 0.04;
     shadow = 0;
     colorText[] = {0, 0, 0, 1};
     colorDisabled[] = {0, 0, 0, 0.25};
@@ -214,25 +214,25 @@ class GVAR(Display) {
         // Exit-Back
         class Main_Pic_C1_RE: GVAR(RscPicture) {
             idc = BACKPIC;
-            x = PIC_X_C1;
-            y = PIC_Y + OFFSET_Y_RE;
+            x = QOUTE(PIC_X_C1);
+            y = QOUTE(PIC_Y + OFFSET_Y_RE);
         };
         class Main_Btn_C1_RE: GVAR(RscButton) {
             idc = BACKBTN;
-            x = BTN_X_C1;
-            y = BTN_Y + OFFSET_Y_RE;
+            x = QOUTE(BTN_X_C1);
+            y = QOUTE(BTN_Y + OFFSET_Y_RE);
         };
 
         // Take-Stash
         class TakeStash_Pic_C1_R1: GVAR(RscPicture) {
             idc = TAKESTASHPIC;
-            x = PIC_X_C3;
-            y = PIC_Y + OFFSET_Y_RE;
+            x = QOUTE(PIC_X_C3);
+            y = QOUTE(PIC_Y + OFFSET_Y_RE);
         };
         class TakeStash_Btn_C1_R1: GVAR(RscButton) {
             idc = TAKESTASHBTN;
-            x = BTN_X_C3;
-            y = BTN_Y + OFFSET_Y_RE;
+            x = QOUTE(BTN_X_C3);
+            y = QOUTE(BTN_Y + OFFSET_Y_RE);
         };
 
         // MAIN MENU ONLY
@@ -240,146 +240,146 @@ class GVAR(Display) {
         // Row 1
         class Main_Pic_C1_R1: GVAR(RscPicture) {
             idc = MAINPIC1;
-            x = PIC_X_C1;
-            y = PIC_Y;
+            x = QOUTE(PIC_X_C1);
+            y = QOUTE(PIC_Y);
         };
         class Main_Btn_C1_R1: GVAR(RscButton) {
             idc = MAINBTN1;
-            x = BTN_X_C1;
-            y = BTN_Y;
+            x = QOUTE(BTN_X_C1);
+            y = QOUTE(BTN_Y);
         };
 
         // Row 2
         class Main_Pic_C1_R2: GVAR(RscPicture) {
             idc = MAINPIC2;
-            x = PIC_X_C1;
-            y = PIC_Y + OFFSET_Y_R2;
+            x = QOUTE(PIC_X_C1);
+            y = QOUTE(PIC_Y + OFFSET_Y_R2);
         };
         class Main_Btn_C1_R2: GVAR(RscButton) {
             idc = MAINBTN2;
-            x = BTN_X_C1;
-            y = BTN_Y + OFFSET_Y_R2;
+            x = QOUTE(BTN_X_C1);
+            y = QOUTE(BTN_Y + OFFSET_Y_R2);
         };
 
         // Row 3
         class Main_Pic_C1_R3: GVAR(RscPicture) {
             idc = MAINPIC3;
-            x = PIC_X_C1;
-            y = PIC_Y + OFFSET_Y_R3;
+            x = QOUTE(PIC_X_C1);
+            y = QOUTE(PIC_Y + OFFSET_Y_R3);
         };
         class Main_Btn_C1_R3: GVAR(RscButton) {
             idc = MAINBTN3;
-            x = BTN_X_C1;
-            y = BTN_Y + OFFSET_Y_R3;
+            x = QOUTE(BTN_X_C1);
+            y = QOUTE(BTN_Y + OFFSET_Y_R3);
         };
 
         // Row 4
         class Main_Pic_C1_R4: GVAR(RscPicture) {
             idc = MAINPIC4;
-            x = PIC_X_C1;
-            y = PIC_Y + OFFSET_Y_R4;
+            x = QOUTE(PIC_X_C1);
+            y = QOUTE(PIC_Y + OFFSET_Y_R4);
         };
         class Main_Btn_C1_R4: GVAR(RscButton) {
             idc = MAINBTN4;
-            x = BTN_X_C1;
-            y = BTN_Y + OFFSET_Y_R4;
+            x = QOUTE(BTN_X_C1);
+            y = QOUTE(BTN_Y + OFFSET_Y_R4);
         };
 
         // Row 5
         class Main_Pic_C1_R5: GVAR(RscPicture) {
             idc = MAINPIC5;
-            x = PIC_X_C1;
-            y = PIC_Y + OFFSET_Y_R5;
+            x = QOUTE(PIC_X_C1);
+            y = QOUTE(PIC_Y + OFFSET_Y_R5);
         };
         class Main_Btn_C1_R5: GVAR(RscButton) {
             idc = MAINBTN5;
-            x = BTN_X_C1;
-            y = BTN_Y + OFFSET_Y_R5;
+            x = QOUTE(BTN_X_C1);
+            y = QOUTE(BTN_Y + OFFSET_Y_R5);
         };
 
         // Row 6
         class Main_Pic_C1_R6: GVAR(RscPicture) {
             idc = MAINPIC6;
-            x = PIC_X_C1;
-            y = PIC_Y + OFFSET_Y_R6;
+            x = QOUTE(PIC_X_C1);
+            y = QOUTE(PIC_Y + OFFSET_Y_R6);
         };
         class Main_Btn_C1_R6: GVAR(RscButton) {
             idc = MAINBTN6;
-            x = BTN_X_C1;
-            y = BTN_Y + OFFSET_Y_R6;
+            x = QOUTE(BTN_X_C1);
+            y = QOUTE(BTN_Y + OFFSET_Y_R6);
         };
 
         /* Column 2 */
         // Row 1
         class Main_Pic_C2_R1: GVAR(RscPicture) {
             idc = MAINPIC7;
-            x = PIC_X_C2;
-            y = PIC_Y;
+            x = QOUTE(PIC_X_C2);
+            y = QOUTE(PIC_Y);
         };
         class Main_Btn_C2_R1: GVAR(RscButton) {
             idc = MAINBTN7;
-            x = BTN_X_C2;
-            y = BTN_Y;
+            x = QOUTE(BTN_X_C2);
+            y = QOUTE(BTN_Y);
         };
 
         // Row 2
         class Main_Pic_C2_R2: GVAR(RscPicture) {
             idc = MAINPIC8;
-            x = PIC_X_C2;
-            y = PIC_Y + OFFSET_Y_R2;
+            x = QOUTE(PIC_X_C2);
+            y = QOUTE(PIC_Y + OFFSET_Y_R2);
         };
         class Main_Btn_C2_R2: GVAR(RscButton) {
             idc = MAINBTN8;
-            x = BTN_X_C2;
-            y = BTN_Y + OFFSET_Y_R2;
+            x = QOUTE(BTN_X_C2);
+            y = QOUTE(BTN_Y + OFFSET_Y_R2);
         };
 
         // Row 3
         class Main_Pic_C2_R3: GVAR(RscPicture) {
             idc = MAINPIC9;
-            x = PIC_X_C2;
-            y = PIC_Y + OFFSET_Y_R3;
+            x = QOUTE(PIC_X_C2);
+            y = QOUTE(PIC_Y + OFFSET_Y_R3);
         };
         class Main_Btn_C2_R3: GVAR(RscButton) {
             idc = MAINBTN9;
-            x = BTN_X_C2;
-            y = BTN_Y + OFFSET_Y_R3;
+            x = QOUTE(BTN_X_C2);
+            y = QUOTE(BTN_Y + OFFSET_Y_R3);
         };
 
         // Row 4
         class Main_Pic_C2_R4: GVAR(RscPicture) {
             idc = MAINPIC10;
-            x = PIC_X_C2;
-            y = PIC_Y + OFFSET_Y_R4;
+            x = QUOTE(PIC_X_C2);
+            y = QUOTE(PIC_Y + OFFSET_Y_R4);
         };
         class Main_Btn_C2_R4: GVAR(RscButton) {
             idc = MAINBTN10;
-            x = BTN_X_C2;
-            y = BTN_Y + OFFSET_Y_R4;
+            x = QUOTE(BTN_X_C2);
+            y = QUOTE(BTN_Y + OFFSET_Y_R4);
         };
 
         // Row 5
         class Main_Pic_C2_R5: GVAR(RscPicture) {
             idc = MAINPIC11;
-            x = PIC_X_C2;
-            y = PIC_Y + OFFSET_Y_R5;
+            x = QUOTE(PIC_X_C2);
+            y = QUOTE(PIC_Y + OFFSET_Y_R5);
         };
         class Main_Btn_C2_R5: GVAR(RscButton) {
             idc = MAINBTN11;
-            x = BTN_X_C2;
-            y = BTN_Y + OFFSET_Y_R5;
+            x = QUOTE(BTN_X_C2);
+            y = QUOTE(BTN_Y + OFFSET_Y_R5);
         };
 
         // Row 6
         class Main_Pic_C2_R6: GVAR(RscPicture) {
             idc = MAINPIC12;
-            x = PIC_X_C2;
-            y = PIC_Y + OFFSET_Y_R6;
+            x = QUOTE(PIC_X_C2);
+            y = QUOTE(PIC_Y + OFFSET_Y_R6);
         };
         class Main_Btn_C2_R6: GVAR(RscButton) {
             idc = MAINBTN12;
-            x = BTN_X_C2;
-            y = BTN_Y + OFFSET_Y_R6;
+            x = QUOTE(BTN_X_C2);
+            y = QUOTE(BTN_Y + OFFSET_Y_R6);
         };
 
         // PHYSICAL
